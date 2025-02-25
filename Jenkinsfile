@@ -22,5 +22,11 @@ pipeline {
 	
     }
 }
+	    stage('MVN SONARQUBE'){
+		steps {
+		                sh 'mvn deploy'
+	
+    }
+}
     }
 }

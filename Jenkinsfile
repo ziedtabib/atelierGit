@@ -22,11 +22,12 @@ pipeline {
 	
     }
 }*/
-	    stage('MVN DEPLOY'){
-		steps {
-		                sh 'mvn deploy'
-	
-    }
-}
+	stage('Deploy') {
+            steps {
+                withMaven(maven: 'M2_HOME') {
+                    sh 'mvn deploy'
+                }
+            }
+        }
     }
 }

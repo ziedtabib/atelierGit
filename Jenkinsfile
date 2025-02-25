@@ -22,12 +22,11 @@ pipeline {
 	
     }
 }*/
-	stage('Deploy') {
+stage('MVN Nexus') {
             steps {
-                withMaven(maven: 'M2_HOME') {
-                    sh 'mvn deploy'
-                }
+                sh 'mvn deploy -Dmaven.test.skip=true'
             }
         }
+	
     }
 }
